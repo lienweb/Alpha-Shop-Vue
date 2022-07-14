@@ -8,11 +8,6 @@ nav {
   transition: transform .2s ease-out;
 }
 
-.header__hamburger:checked~nav {
-  transform: scale(1, 1);
-  z-index: 1;
-}
-
 .nav__item {
   position: relative;
   padding: $spacer;

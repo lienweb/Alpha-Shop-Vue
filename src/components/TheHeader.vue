@@ -6,6 +6,9 @@
   </header>
 </template>
 
+<style lang="scss" src="@/assets/scss/layout/header.scss">
+</style>
+
 <script>
 import Navbar from './Navbar.vue'
 import TheLogo from './TheLogo.vue'

@@ -8,6 +8,11 @@ const routes = [
   {
     path: '/',
     name: 'root',
+    redirect: '/submit'
+  },
+  {
+    path: '/submit',
+    name: 'submit-order',
     component: () => import(/* webpackChunkName: "about" */ '../views/SubmitOrder.vue')
   },
   {

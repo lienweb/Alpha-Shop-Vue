@@ -2,9 +2,10 @@ header {
   position: relative;
 }
 
-
-
-
+.header__hamburger:checked~nav {
+  transform: scale(1, 1);
+  z-index: 1;
+}
 
 @media screen and (min-width: 375px) {
   header {
@@ -12,6 +13,4 @@ header {
     grid-template-columns: repeat(12, 1fr);
     margin: 0 1rem;
   }
-
-
 }

@@ -4,9 +4,7 @@
     <TheHeader />
 
     <!-- page -->
-    <main>
-      <router-view />
-    </main>
+    <router-view />
 
     <!-- footer -->
   </div>
@@ -16,6 +14,7 @@
 </style>
 
 <script>
+// import '@/assets/scss/global.scss' //sass var fail to compile
 import TheHeader from './components/TheHeader.vue'
 
 export default {
