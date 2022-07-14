@@ -1,10 +1,5 @@
-header {
-  position: relative;
-}
-
 .logo--container {
-  padding: $spacer;
-
+  // padding: $spacer;
 }
 
 .logo--name {
@@ -20,16 +15,11 @@ header {
 .header__toggle {
   background-image: var(--hamburger);
   position: absolute;
-  left: $spacer;
+  // left: $spacer;
   cursor: pointer;
 }
 
 @media screen and (min-width: 375px) {
-  header {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    margin: 0 1rem;
-  }
 
   //disable mobile menu
   .header__toggle {

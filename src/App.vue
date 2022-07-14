@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<style lang="scss" src="./scss/base/_base.scss">
+<style lang="scss" src="@/assets/scss/components/containers.scss">
 </style>
 
 <script>

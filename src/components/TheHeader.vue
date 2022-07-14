@@ -1,5 +1,6 @@
 <template>
   <header>
+    <input type="checkbox" class="header__hamburger d-none" id="navbar-toggle" />
     <TheLogo />
     <Navbar />
   </header>
