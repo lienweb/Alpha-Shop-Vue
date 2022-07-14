@@ -1,0 +1,43 @@
+header {
+  position: relative;
+}
+
+.logo--container {
+  padding: $spacer;
+
+}
+
+.logo--name {
+  width: 130px;
+  height: 30px;
+}
+
+.logo {
+  width: 20px;
+  height: 30px;
+}
+
+.header__toggle {
+  background-image: var(--hamburger);
+  position: absolute;
+  left: $spacer;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 375px) {
+  header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin: 0 1rem;
+  }
+
+  //disable mobile menu
+  .header__toggle {
+    display: none;
+  }
+
+  .logo--container {
+    grid-column: 6/9;
+    z-index: 1;
+  }
+}

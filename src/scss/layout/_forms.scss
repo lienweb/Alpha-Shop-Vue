@@ -1,0 +1,108 @@
+.form__row {
+  justify-content: space-between;
+  margin-top: 1.5rem;
+
+  & label {
+    @extend %label-style;
+    display: block;
+  }
+
+  & input:not([type="radio"]) {
+    @extend %input-style;
+
+    &::placeholder {
+      color: #999;
+    }
+  }
+
+  & input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px var(--main) inset;
+    -webkit-text-fill-color: var(--text-primary);
+  }
+}
+
+
+[type="radio"] {
+  -webkit-appearance: none;
+  padding: 0.5rem;
+  border: 1px solid var(--radio-border);
+  border-radius: 50%;
+  background-color: var(--radio-bg);
+  cursor: pointer;
+  box-shadow: inset 0 0 0 var(--box-shadow-size) var(--radio-box-shadow); //用光暈整個覆蓋
+
+  &:checked {
+    box-shadow: inset 0 0 0 5px var(--radio-box-shadow);
+  }
+}
+
+[type="submit"] {
+  border: unset;
+}
+
+select {
+  @extend %input-style;
+  -webkit-appearance: none;
+  cursor: pointer;
+
+  &:invalid {
+    color: #999;
+  }
+}
+
+.select-wrap {
+  position: relative;
+  z-index: 0;
+
+  &::after {
+    //triangle
+    content: "";
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: var(--text-primary) transparent transparent transparent;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+}
+
+.payment .form__col {
+  flex-basis: 45%;
+}
+
+.shipping {
+  align-items: center;
+  border: 1px solid var(--radio-border);
+  border-radius: 4px;
+
+  &.checked {
+    border-color: var(--text-primary);
+  }
+
+  & .form__col {
+    align-items: center;
+  }
+
+  & label {
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+
+  & p {
+    color: var(--label-text-secondary);
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .main__content-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-flow: row;
+  }
+
+  form {
+    grid-column: 1/7;
+  }
+}

@@ -1,0 +1,34 @@
+//dark mode
+[data-theme="dark"] {
+  --main: #121212;
+  --text-primary: #fff;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  //stepper
+  --step-text: rgba(255, 255, 255, 0.4);
+  --step-select: #fff;
+  --step-checked-bg: #333;
+  --first-step-bg: #333;
+  //form
+  --input-border: #5E5E5E;
+  --radio-bg: #333;
+  --radio-border: #333;
+  --radio-bg: #fff;
+  --label-text-secondary: #FFFFFF66;
+  --box-shadow-size: 8px;
+  //cart
+  --cart-bg: #383838;
+  --cart-border: rgba(255, 255, 255, 0.2);
+  --cart-count-bg: #808080;
+  //footer
+  --footer-bg: #333333;
+
+  & .mobile-menu,
+  & .logo--name {
+    @extend %icon-dark-primary;
+  }
+
+  & .search,
+  & .cart {
+    @extend %icon-dark-secondary;
+  }
+}

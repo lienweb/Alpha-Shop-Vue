@@ -1,0 +1,58 @@
+.main__btn-control {
+  position: relative;
+  justify-content: space-between;
+  margin-top: 82px;
+
+  .btn {
+    padding: 14.5px;
+    text-align: center;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    &.active {
+      background-color: var(--btn-active);
+      border-radius: 8px;
+      color: #fff;
+    }
+
+    &.disabled {
+      cursor: auto;
+    }
+  }
+
+  .previous {
+    color: var(--text-primary);
+  }
+
+  .next {
+    flex: 1;
+  }
+
+  &::before {
+    content: "";
+    border-bottom: 1px solid #e6e6eb;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -30%;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .main__btn-control {
+    grid-column: 1/7;
+    margin-bottom: 120px;
+
+    .previous {
+      display: block;
+      visibility: hidden;
+    }
+
+    .next {
+      flex: 0 1 auto;
+    }
+  }
+}

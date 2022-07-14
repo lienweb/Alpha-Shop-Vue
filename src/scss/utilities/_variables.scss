@@ -1,0 +1,71 @@
+$sizes: (
+  25: 25%,
+  50: 50%,
+  65: 65%,
+  75: 75%,
+  100: 100%
+);
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: ($spacer * 0.25),
+  2: ($spacer * 0.5),
+  3: ($spacer * 0.75),
+  4: $spacer,
+  5: ($spacer * 1.25),
+  6: ($spacer * 1.5),
+  7: ($spacer * 1.75),
+  8: ($spacer * 2),
+  9:($spacer * 2.5),
+);
+
+/* 使用@each 產出css size設定 */
+@each $prop,
+$abbrev in (width: w, height: h) {
+
+  @each $num,
+  $val in $sizes {
+    .#{$abbrev}-#{$num} {
+      #{$prop}: $val;
+    }
+  }
+}
+
+/* 使用@each 產出css spacer設定 */
+@each $prop,
+$abbrev in (margin: m, padding: p) {
+
+  @each $num,
+  $val in $spacers {
+    .#{$abbrev}-#{$num} {
+      #{$prop}: $val;
+    }
+
+    .#{$abbrev}t-#{$num} {
+      #{$prop}-top: $val;
+    }
+
+    .#{$abbrev}r-#{$num} {
+      #{$prop}-right: $val;
+    }
+
+    .#{$abbrev}b-#{$num} {
+      #{$prop}-bottom: $val;
+    }
+
+    .#{$abbrev}l-#{$num} {
+      #{$prop}-left: $val;
+    }
+
+    .#{$abbrev}x-#{$num} {
+      #{$prop}-left: $val;
+      #{$prop}-right: $val;
+    }
+
+    .#{$abbrev}y-#{$num} {
+      #{$prop}-top: $val;
+      #{$prop}-bottom: $val;
+    }
+  }
+}

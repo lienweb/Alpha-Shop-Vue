@@ -1,0 +1,29 @@
+//顏色、框線、尺寸
+:root {
+  --main: #fff;
+  --text-primary: #2A2A2A;
+  --text-secondary: #808080;
+  //stepper
+  --step-text: #AFB1BD;
+  --step-select: #2A2A2A;
+  --step-checked-bg: #333;
+  --first-step-bg: #2A2A2A;
+  //form
+  --input-border: #4A4A4A;
+  --radio-bg: #F0F0F5;
+  --radio-border: #F0F0F5;
+  --radio-box-shadow: #2A2A2A;
+  --radio-bg: #fff;
+  --label-text-secondary: #000;
+  --box-shadow-size: 0px;
+  //cart
+  --cart-bg: var(--main);
+  --cart-border: #F0F0F5;
+  --cart-count-bg: #F0F0F5;
+  //button
+  --btn-active: #F67599;
+  --check-mark: url("../images/check_mark.svg");
+  --hamburger: url("../images/mobile_menu.svg");
+  //footer
+  --footer-bg: #F6F7F8;
+}
