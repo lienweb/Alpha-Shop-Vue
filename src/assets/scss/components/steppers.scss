@@ -24,7 +24,7 @@
       content: var(--check-mark);
     }
 
-    &.first {
+    &:first-child {
       border: none;
       background-color: var(--first-step-bg);
       color: #fff;

@@ -1,0 +1,22 @@
+.shipping {
+  align-items: center;
+  border: 1px solid var(--radio-border);
+  border-radius: 4px;
+
+  &.checked {
+    border-color: var(--text-primary);
+  }
+
+  & .form__col {
+    align-items: center;
+  }
+
+  & label {
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+
+  & p {
+    color: var(--label-text-secondary);
+  }
+}
