@@ -26,3 +26,12 @@
     </div>
   </div>
 </template>
+
+<style lang="scss" src="@/assets/scss/components/formPayment.scss" scoped>
+</style>
+
+<script>
+export default {
+
+}
+</script>

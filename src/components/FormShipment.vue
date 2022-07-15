@@ -24,3 +24,12 @@
   </div>
 
 </template>
+
+<style lang="scss" src="@/assets/scss/components/formShipment.scss" scoped>
+</style>
+
+<script>
+export default {
+
+}
+</script>

@@ -1,5 +1,5 @@
-const path = require('path');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const path = require('path')
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
   lintOnSave: process.env.NODE_ENV !== 'production',
@@ -10,6 +10,7 @@ module.exports = {
   // },
   css: {
     loaderOptions: {
+      // 開幾個分頁就注入幾次？？？？
       // 给 sass-loader 传递选项
       // @/ is an alias to src/
       // so this assumes you have a file named `src/variables.sass`
@@ -20,8 +21,8 @@ module.exports = {
       // `scss` 语法会要求语句结尾必须有分号，`sass` 则要求必须没有分号
       // 在这种情况下，我们可以使用 `scss` 选项，对 `scss` 语法进行单独配置
       scss: {
-        prependData: `@import "~@/assets/scss/global.scss";`
+        prependData: '@import "~@/assets/scss/global.scss";'
       }
     }
   }
-};
+}
