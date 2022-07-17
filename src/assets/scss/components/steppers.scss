@@ -17,17 +17,17 @@
       color: var(--text-primary);
     }
 
+    &.first {
+      border: none;
+      background-color: var(--first-step-bg);
+      color: #fff;
+    }
+
     &.checked {
       border: none;
       background-color: var(--step-checked-bg);
       color: #fff;
       content: var(--check-mark);
-    }
-
-    &:first-child {
-      border: none;
-      background-color: var(--first-step-bg);
-      color: #fff;
     }
   }
 

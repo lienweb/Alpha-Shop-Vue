@@ -13,9 +13,9 @@
 }
 
 .header__toggle {
-  background-image: var(--hamburger);
+  // background-image: var(--hamburger);
   position: absolute;
-  // left: $spacer;
+  left: $spacer;
   cursor: pointer;
 }
 

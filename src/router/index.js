@@ -13,7 +13,22 @@ const routes = [
   {
     path: '/submit',
     name: 'submit-order',
-    component: () => import(/* webpackChunkName: "about" */ '../views/SubmitOrder.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/OrderSubmit.vue')
+  },
+  {
+    path: '/submit/address',
+    name: 'submit-address',
+    component: () => import(/* webpackChunkName: "about" */ '../views/FormAddress.vue')
+  },
+  {
+    path: '/submit/shipping',
+    name: 'submit-shipping',
+    component: () => import(/* webpackChunkName: "about" */ '../views/FormShipment.vue')
+  },
+  {
+    path: '/submit/payment',
+    name: 'submit-payment',
+    component: () => import(/* webpackChunkName: "about" */ '../views/FormPayment.vue')
   },
   {
     path: '*',
@@ -23,7 +38,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes
 })
