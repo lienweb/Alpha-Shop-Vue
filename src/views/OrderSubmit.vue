@@ -104,12 +104,6 @@ export default {
     formValidate () {
       console.log('validate')
     },
-    afterButtonClick ({ step, currentPath }) {
-      // const { step, currentPath } = formStep
-      this.currentStep = step
-      this.activeStep()
-      // this.formPath = currentPath
-    },
     afterCalc (total) {
       this.order.totalPrice = total
     },

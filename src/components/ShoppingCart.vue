@@ -126,5 +126,4 @@ export default {
     }
   }
 }
-// 運費更新、sum的回傳
 </script>

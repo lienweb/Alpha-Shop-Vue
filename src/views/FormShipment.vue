@@ -71,5 +71,4 @@ export default {
     this.fetchShippingMethods()
   }
 }
-// input checked改變樣式改變？
 </script>

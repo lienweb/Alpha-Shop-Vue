@@ -41,7 +41,7 @@ export default {
     }
   },
   filters: {
-    displayFormData(form) {
+    displayFormData (form) {
       return JSON.stringify(form, null, 4)
     }
   }
