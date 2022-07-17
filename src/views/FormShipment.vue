@@ -45,20 +45,20 @@ export default {
       required: true
     }
   },
-  data() {
+  data () {
     return {
       shippingMethods: [],
       shippingFee: 0
     }
   },
   methods: {
-    fetchShippingMethods() {
+    fetchShippingMethods () {
       this.shippingMethods = dummyData.shippingMethods.map(method => ({
         ...method,
         isActive: method.id === 1
       }))
     },
-    handleMethodClick(event, id) {
+    handleMethodClick (event, id) {
       this.shippingMethods = this.shippingMethods.map(method => ({
         ...method,
         isActive: method.id === id
@@ -67,7 +67,7 @@ export default {
       this.$emit('after-select-shipping', this.shippingFee)
     }
   },
-  created() {
+  created () {
     this.fetchShippingMethods()
   }
 }

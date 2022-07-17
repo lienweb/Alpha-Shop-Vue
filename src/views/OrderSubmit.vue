@@ -8,7 +8,7 @@
       <form class="main__form-control" @submit.stop.prevent="handleSubmit">
         <!-- form -->
         <FormAddress v-show="currentStep === 1" :initial-form="order" />
-        <FormShipment v-show="currentStep === 2" :initial-form="order" @after-select-shipping="getShippingFee"/>
+        <FormShipment v-show="currentStep === 2" :initial-form="order" @after-select-shipping="getShippingFee" />
         <FormPayment v-show="currentStep === steps.length" :initial-form="order" />
 
         <!-- btn -->
@@ -20,6 +20,7 @@
             @click.stop.prevent="handleNextButtonClick">下一步 &#8594;
           </button>
           <button type="submit" class="btn active submit" v-else>確認下單</button>
+          <CheckoutModal v-if="isShowModal" @close="afterClose" :form-data="order" />
         </div>
       </form>
       <!-- cart -->
@@ -39,6 +40,7 @@ import FormAddress from './FormAddress.vue'
 import FormShipment from './FormShipment.vue'
 import FormPayment from './FormPayment.vue'
 import ShoppingCart from '../components/ShoppingCart.vue'
+import CheckoutModal from '../components/CheckoutModal.vue'
 
 export default {
   components: {
@@ -46,7 +48,8 @@ export default {
     FormAddress,
     FormShipment,
     FormPayment,
-    ShoppingCart
+    ShoppingCart,
+    CheckoutModal
   },
   data () {
     return {
@@ -85,7 +88,8 @@ export default {
         expireDate: '',
         CVV: '',
         totalPrice: 0
-      }
+      },
+      isShowModal: false
     }
   },
   methods: {
@@ -121,7 +125,9 @@ export default {
     handleSubmit (e) {
       this.validateForm()
       console.log(JSON.stringify(this.order, null, 4))
+      this.isShowModal = true
 
+      // reset
       this.initForm()
       this.activeStep()
     },
@@ -145,8 +151,11 @@ export default {
     validateForm () {
       console.log('validate form data')
     },
-    getShippingFee(fee){
+    getShippingFee (fee) {
       this.order.shippingFee = fee
+    },
+    afterClose () {
+      this.isShowModal = false
     }
   }
 }

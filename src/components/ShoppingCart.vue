@@ -62,17 +62,17 @@ export default {
       required: true
     }
   },
-  data() {
+  data () {
     return {
       shoppingCart: {},
       sum: 0
     }
   },
   methods: {
-    fetchCart() {
+    fetchCart () {
       this.shoppingCart = dummyData.cart
     },
-    handleAddItem(id) {
+    handleAddItem (id) {
       this.shoppingCart = this.shoppingCart.map(item => {
         return item.id === id ? {
           ...item,
@@ -80,7 +80,7 @@ export default {
         } : item
       })
     },
-    handleDeleteItem(id) {
+    handleDeleteItem (id) {
       this.shoppingCart = this.shoppingCart.map(item => {
         return item.id === id ? {
           ...item,
@@ -88,7 +88,7 @@ export default {
         } : item
       })
     },
-    calcTotalAmount() {
+    calcTotalAmount () {
       // reset sum
       this.sum = 0
       this.shoppingCart.forEach(item => {
@@ -97,7 +97,7 @@ export default {
       this.sum += parseInt(this.initialForm.shippingFee)
     }
   },
-  created() {
+  created () {
     this.fetchCart()
     this.calcTotalAmount()
   },
@@ -121,7 +121,7 @@ export default {
     }
   },
   filters: {
-    displayShipping(fee) {
+    displayShipping (fee) {
       return fee ? `$${fee}` : '免費'
     }
   }
