@@ -8,7 +8,7 @@
       <form class="main__form-control" @submit.stop.prevent="handleSubmit">
         <!-- form -->
         <FormAddress v-show="currentStep === 1" :initial-form="order" />
-        <FormShipment v-show="currentStep === 2" :initial-form="order" />
+        <FormShipment v-show="currentStep === 2" :initial-form="order" @after-select-shipping="getShippingFee"/>
         <FormPayment v-show="currentStep === steps.length" :initial-form="order" />
 
         <!-- btn -->
@@ -144,6 +144,9 @@ export default {
     },
     validateForm () {
       console.log('validate form data')
+    },
+    getShippingFee(fee){
+      this.order.shippingFee = fee
     }
   }
 }

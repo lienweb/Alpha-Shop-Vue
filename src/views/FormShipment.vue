@@ -5,8 +5,8 @@
       :class="{ 'checked': method.isActive }">
       <div class="form__col d-flex">
         <input type="radio" name="shipping-method" :checked="method.isActive" :value="method.fee"
-          :class="{ 'checked': method.isActive }" v-model.number="shippingFee" :id="method.id"
-          @click.stop.prevent="handleMethodClick(method.id)">
+          :class="{ 'checked': method.isActive }" v-model="shippingFee" :id="method.id"
+          @click.stop.prevent="handleMethodClick($event, method.id)">
         <div class="ml-5">
           <label :for="method.id">{{ method.name }}</label>
           <p>{{ method.duration }}</p>
@@ -58,11 +58,12 @@ export default {
         isActive: method.id === 1
       }))
     },
-    handleMethodClick(id) {
+    handleMethodClick(event, id) {
       this.shippingMethods = this.shippingMethods.map(method => ({
         ...method,
         isActive: method.id === id
       }))
+      this.shippingFee = parseInt(event.target.value)
       this.$emit('after-select-shipping', this.shippingFee)
     }
   },
